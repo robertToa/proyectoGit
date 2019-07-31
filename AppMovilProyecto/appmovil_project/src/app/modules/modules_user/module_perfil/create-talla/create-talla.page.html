@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="primary">
+      Crear Talla de Jeans
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div style="padding: 4%; padding-top: 10%">
+    <ion-item>
+      <ion-label position="floating">Talla para el Jean</ion-label>
+      <ion-input type="text" [(ngModel)]="tallaJean.tallaJean"></ion-input>
+    </ion-item>
+    <ion-button expand="block" (click)="crear()">
+      Crear Tipo de Jean
+    </ion-button>
+  </div>
+
+</ion-content>
+

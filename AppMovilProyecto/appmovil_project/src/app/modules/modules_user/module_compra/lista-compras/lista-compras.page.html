@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title color="primary">
+            Lista de Compras
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-list >
+        <ion-item *ngFor="let item of compras">
+            <ion-label>
+                <h2>{{item.nombreDistribuidor}}</h2>
+                <p>{{item.fechaCompra |date: "MM/dd/yyyy HH:mm:ss"}}</p>
+                <ion-row>
+                    <ion-icon name="cash" color="primary"></ion-icon>
+                    <h3>{{item.totalCompra}}</h3>
+                </ion-row>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="floatingButton()">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>

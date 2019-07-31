@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title color="primary">
+            {{jean.nombreJean}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list >
+        <ion-item *ngFor="let item of ventas">
+            <ion-label>
+                <h2>{{item.nombreComprador}}</h2>
+                <p>{{item.fechaVenta}}</p>
+                <ion-row>
+                    <ion-icon name="logo-usd"  color="primary" ></ion-icon>
+                    <h3>{{item.totalVenta}}</h3>
+                </ion-row>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
+

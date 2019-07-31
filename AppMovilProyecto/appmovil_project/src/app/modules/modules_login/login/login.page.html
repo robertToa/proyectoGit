@@ -1,0 +1,32 @@
+<ion-header  align-title="center">
+    <img id="imagenF" src="/assets/img/logo_icono.png" />
+</ion-header>
+<ion-content text-center class="vertical-align-content">
+    <div style="padding: 4%;">
+        <img id="imagen" src="/assets/img/logo_icono.png" />
+        <ion-item>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input type="text" maxlength="15" [(ngModel)]="usuario.nicknameUsuario"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" maxlength="20" [(ngModel)]="usuario.passwordUsuario"></ion-input>
+        </ion-item>
+        <ion-button expand="block" (click)="login()">
+            <ion-icon slot="start" name="log-in"></ion-icon>
+            Log In
+        </ion-button>
+        <ion-button expand="block" (click)="registrer()">
+            <ion-icon slot="start" name="log-in"></ion-icon>
+            Registrarse
+        </ion-button>
+        <ion-item text-center="true">
+            <ion-button expand="block" fill="clear" (click)="forgetPassword()">
+                <p style="font-size: smaller;">
+                    ¿OLVIDASTE TU CONTRASEÑA?
+                </p>
+            </ion-button>
+        </ion-item>
+    </div>
+</ion-content>
+

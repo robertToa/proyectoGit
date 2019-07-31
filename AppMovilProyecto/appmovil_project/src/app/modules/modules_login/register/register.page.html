@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary" >
+    <ion-row>
+      <ion-col col-1 justify-content-center>
+        <img id="imagenR" src="/assets/img/logo_icono.png" />
+      </ion-col>
+      <ion-col col-11 align-self-center>
+        <ion-title>Registrar</ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div style="padding: 4%; padding-top: 10%">
+    <ion-item>
+      <ion-label position="floating">Username del usuario</ion-label>
+      <ion-input  type="text" maxlength="15" [(ngModel)]="usuario.nicknameUsuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nombre del Usuario</ion-label>
+      <ion-input type="text" maxlength="30" [(ngModel)]="usuario.nombreUsuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Apellido del Usuario</ion-label>
+      <ion-input type="text" maxlength="30" [(ngModel)]="usuario.apellidoUsuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email del Usuario</ion-label>
+      <ion-input type="email" maxlength="70" [(ngModel)]="usuario.emailUsuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Edad del Usuario</ion-label>
+      <ion-input type="number"  maxlength="2" [(ngModel)]="usuario.edadUsuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" maxlength="20" [(ngModel)]="usuario.passwordUsuario"></ion-input>
+    </ion-item>
+    <ion-button expand="block" (click)="registrarse()">
+      <ion-icon slot="start" name="log-in"></ion-icon>
+      Registrar Usuario
+    </ion-button>
+  </div>
+
+</ion-content>

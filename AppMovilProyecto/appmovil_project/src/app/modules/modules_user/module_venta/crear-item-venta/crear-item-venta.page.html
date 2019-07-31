@@ -1,0 +1,90 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title color="primary">
+            Crear Venta
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-list >
+        <ion-title color="primary">
+            Datos Generales
+        </ion-title>
+        <div style="padding: 4%;">
+            <ion-item>
+                <ion-label position="floating">Nombre del Comprador</ion-label>
+                <ion-input type="text" [(ngModel)]="cabeceraDetalle.nombreComprador"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Dirección del Comprador</ion-label>
+                <ion-input type="text" [(ngModel)]="cabeceraDetalle.direccionComprador"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Telefono del Comprador</ion-label>
+                <ion-input type="text" [(ngModel)]="cabeceraDetalle.telefonoComprador"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Email del Comprador</ion-label>
+                <ion-input type="email" [(ngModel)]="cabeceraDetalle.emailComprador"></ion-input>
+            </ion-item>
+        </div>
+    </ion-list>
+    <ion-list>
+        <ion-row>
+            <ion-col size="8">
+                <ion-title color="primary">
+                    Detalle de la Venta
+                </ion-title>
+            </ion-col>
+            <ion-col size="2">
+                <ion-button fill="clear" (click)="agregarItem()">
+                    <ion-icon name="add-circle-outline" size="large"></ion-icon>
+                </ion-button>
+            </ion-col>
+            <ion-col size="2">
+                <ion-button fill="clear" (click)="eliminarItem()">
+                    <ion-icon name="remove-circle-outline" size="large"></ion-icon>
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-item *ngFor="let item of detalleVenta">
+            <ion-row>
+                <ion-col size="12">
+
+                    <ion-select interface="popover" placeholder="Seleccione jean"  [(ngModel)]="item.idJean">
+                        <ion-select-option *ngFor="let jean of jeans" value={{jean.id}} >{{jean.nombreJean}}</ion-select-option>
+                    </ion-select>
+                </ion-col>
+                <ion-col size="6">
+                    <ion-item>
+                        <ion-label position="floating">Cantidad</ion-label>
+                        <ion-input type="number" [(ngModel)]="item.cantidadVenta"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col size="6">
+                    <ion-item>
+                        <ion-label position="floating">Valor</ion-label>
+                        <ion-input type="number" [(ngModel)]="item.precioUnitarioVenta"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+        <ion-row>
+            <ion-col size="6">
+                <ion-button expand="block" (click)="cancelar()">
+                    <ion-icon slot="start" name="trash"></ion-icon>
+                    Cancelar
+                </ion-button>
+            </ion-col>
+            <ion-col size="6">
+                <ion-button expand="block" (click)="guardar()">
+                    <ion-icon slot="start" name="save"></ion-icon>
+                    Guardar
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-list>
+</ion-content>
